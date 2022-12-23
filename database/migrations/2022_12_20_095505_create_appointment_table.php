@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTypeUserTable extends Migration
+class CreateAppointmentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,14 @@ class CreateTypeUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_user', function (Blueprint $table) {
+        Schema::create('appointment', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->integer('docter_id');
+            $table->integer('user_id');
+            $table->integer('consultation_id');
+            $table->date('date')->nullable();
+            $table->time('time')->nullable();
+            $table->enum('status', [1,2]);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -28,6 +33,6 @@ class CreateTypeUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_user');
+        Schema::dropIfExists('appointment');
     }
 }
