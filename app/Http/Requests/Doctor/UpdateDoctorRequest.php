@@ -1,0 +1,41 @@
+<?php
+
+namespace App\Http\Requests\Doctor;
+
+use App\Models\Operational\Doctor;
+use Illuminate\Foundation\Http\FormRequest;
+use Symfony\Component\HttpFoundation\Response;
+
+class UpdateDoctorRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        //create middleware from karnel at here
+       return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'specialist_id' =>  [
+                'required', 'integer', 
+            ],
+            'fee' =>  [
+                'required', 'integer', 
+            ],
+            'photo' =>  [
+                'nullable', '', 
+            ],
+        ];
+    }
+}
