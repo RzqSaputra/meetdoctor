@@ -21,7 +21,7 @@ use App\Models\MasterData\Consultation;
 
 class AppointmentController extends Controller
 {
-    public function __constract()
+    public function __construct()
     {
         $this->middleware('auth');
     }

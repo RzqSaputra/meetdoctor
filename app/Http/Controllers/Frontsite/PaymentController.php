@@ -23,7 +23,7 @@ use App\Models\MasterData\ConfigPayment;
 
 class PaymentController extends Controller
 {
-    public function __constract()
+    public function __construct()
     {
         $this->middleware('auth');
     }
@@ -35,7 +35,7 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        return view('pages.frontsite.paymnet.index');  
+        return view('pages.frontsite.payment.index');  
     }
 
     /**

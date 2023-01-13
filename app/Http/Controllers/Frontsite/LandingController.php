@@ -20,12 +20,7 @@ use App\Models\MasterData\Specialist;
 //Thirdparty Package
 
 class LandingController extends Controller
-{
-    public function __constract()
-    {
-        $this->middleware('auth');
-    }
-    
+{   
     /**
      * Display a listing of the resource.
      *
